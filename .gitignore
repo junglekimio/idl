@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/intellij+all,visualstudiocode,go,vim,macos,windows
-# Edit at https://www.toptal.com/developers/gitignore?templates=intellij+all,visualstudiocode,go,vim,macos,windows
+# Created by https://www.toptal.com/developers/gitignore/api/go,vim,macos,windows,intellij+all,visualstudiocode,homebrew
+# Edit at https://www.toptal.com/developers/gitignore?templates=go,vim,macos,windows,intellij+all,visualstudiocode,homebrew
 
 ### Go ###
 # If you prefer the allow list template instead of the deny list, see community template:
@@ -27,6 +27,9 @@ go.work
 ### Go Patch ###
 /vendor/
 /Godeps/
+
+### Homebrew ###
+Brewfile.lock.json
 
 ### Intellij+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
@@ -221,4 +224,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/intellij+all,visualstudiocode,go,vim,macos,windows
+# End of https://www.toptal.com/developers/gitignore/api/go,vim,macos,windows,intellij+all,visualstudiocode,homebrew
