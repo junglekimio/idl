@@ -2,8 +2,8 @@
 >  Interface Definition Language
 
 ## Prerequisites
-- [Golang 1.19](https://go.dev/doc/install) 
-- [Buf](https://docs.buf.build/installation)
+- [Go](https://go.dev/doc/install) 
+- [buf](https://docs.buf.build/installation)
 
 ## Command
 
