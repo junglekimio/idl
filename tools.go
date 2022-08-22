@@ -7,3 +7,9 @@
 // @see https://github.com/golang/go/wiki/Modules#how-can-i-track-tool-dependencies-for-a-module
 
 package tools
+
+import (
+	_ "github.com/bufbuild/buf/cmd/buf"
+	_ "github.com/bufbuild/buf/cmd/protoc-gen-buf-breaking"
+	_ "github.com/bufbuild/buf/cmd/protoc-gen-buf-lint"
+)
