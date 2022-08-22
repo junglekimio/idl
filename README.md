@@ -1,7 +1,7 @@
 # idl
 >  Interface Definition Language
 
-## Requirements
+## Prerequisites
 - [Golang 1.19](https://go.dev/doc/install) 
 - [Buf](https://docs.buf.build/installation)
 
