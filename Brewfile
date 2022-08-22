@@ -1,1 +1,1 @@
-brew bufbuild/buf/buf
+brew "bufbuild/buf/buf"
