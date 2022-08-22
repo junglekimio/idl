@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package example.service.v1;
 
 import "google/api/annotations.proto";
@@ -7,7 +8,6 @@ option go_package = "github.com/junglekimio/idl/gen/go/services/example/v1;examp
 option java_multiple_files = true;
 option java_outer_classname = "ExampleProto";
 option java_package = "com.github.junglekimio.idl.services.example.v1";
-
 
 service ExampleService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
