@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "TodosService"
+      "name": "TodoListService"
     }
   ],
   "consumes": [
@@ -16,9 +16,9 @@
     "application/json"
   ],
   "paths": {
-    "/todos/v1/health": {
+    "/todolist/v1/health": {
       "get": {
-        "operationId": "TodosService_HealthCheck",
+        "operationId": "TodoListService_HealthCheck",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -34,13 +34,13 @@
           }
         },
         "tags": [
-          "TodosService"
+          "TodoListService"
         ]
       }
     },
-    "/todos/v1/server-time": {
+    "/todolist/v1/server-time": {
       "get": {
-        "operationId": "TodosService_GetServerTime",
+        "operationId": "TodoListService_GetServerTime",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -65,7 +65,171 @@
           }
         ],
         "tags": [
-          "TodosService"
+          "TodoListService"
+        ]
+      }
+    },
+    "/todolist/v1/todos": {
+      "get": {
+        "operationId": "TodoListService_ListTodos",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListTodosResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "TodoListService"
+        ]
+      },
+      "post": {
+        "operationId": "TodoListService_CreateTodo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateTodoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "todo",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Todo"
+            }
+          }
+        ],
+        "tags": [
+          "TodoListService"
+        ]
+      },
+      "put": {
+        "operationId": "TodoListService_UpdateTodoStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTodoStatusResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTodoStatusRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TodoListService"
+        ]
+      },
+      "patch": {
+        "operationId": "TodoListService_UpdateTodoStatus2",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTodoStatusResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTodoStatusRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TodoListService"
+        ]
+      }
+    },
+    "/todolist/v1/todos/completed": {
+      "delete": {
+        "operationId": "TodoListService_DeleteCompletedTodos",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteCompletedTodosResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "TodoListService"
+        ]
+      }
+    },
+    "/todolist/v1/todos/{todoId}": {
+      "delete": {
+        "operationId": "TodoListService_DeleteTodo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteTodoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "todoId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "TodoListService"
         ]
       }
     }
@@ -98,6 +262,23 @@
         }
       }
     },
+    "v1CreateTodoResponse": {
+      "type": "object"
+    },
+    "v1DeleteCompletedTodosResponse": {
+      "type": "object",
+      "properties": {
+        "todoIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1DeleteTodoResponse": {
+      "type": "object"
+    },
     "v1GetServerTimeResponse": {
       "type": "object",
       "properties": {
@@ -108,6 +289,65 @@
       }
     },
     "v1HealthCheckResponse": {
+      "type": "object"
+    },
+    "v1ListTodosResponse": {
+      "type": "object",
+      "properties": {
+        "todos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Todo"
+          }
+        }
+      }
+    },
+    "v1Todo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/v1TodoStatus"
+        },
+        "content": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1TodoStatus": {
+      "type": "string",
+      "enum": [
+        "TODO_STATUS_UNSPECIFIED",
+        "TODO_STATUS_ACTIVE",
+        "TODO_STATUS_COMPLETED"
+      ],
+      "default": "TODO_STATUS_UNSPECIFIED"
+    },
+    "v1UpdateTodoStatusRequest": {
+      "type": "object",
+      "properties": {
+        "todoIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "status": {
+          "$ref": "#/definitions/v1TodoStatus"
+        }
+      }
+    },
+    "v1UpdateTodoStatusResponse": {
       "type": "object"
     }
   }
