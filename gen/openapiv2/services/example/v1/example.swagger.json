@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/health": {
+    "/example/v1/health": {
       "get": {
         "operationId": "ExampleService_HealthCheck",
         "responses": {
@@ -38,7 +38,7 @@
         ]
       }
     },
-    "/v1/hello": {
+    "/example/v1/hello": {
       "get": {
         "operationId": "ExampleService_Hello",
         "responses": {

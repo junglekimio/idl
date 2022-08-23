@@ -99,7 +99,7 @@ func RegisterExampleServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/example.service.v1.ExampleService/HealthCheck", runtime.WithHTTPPathPattern("/v1/health"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/services.example.v1.ExampleService/HealthCheck", runtime.WithHTTPPathPattern("/example/v1/health"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -124,7 +124,7 @@ func RegisterExampleServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/example.service.v1.ExampleService/Hello", runtime.WithHTTPPathPattern("/v1/hello"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/services.example.v1.ExampleService/Hello", runtime.WithHTTPPathPattern("/example/v1/hello"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -188,7 +188,7 @@ func RegisterExampleServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/example.service.v1.ExampleService/HealthCheck", runtime.WithHTTPPathPattern("/v1/health"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/services.example.v1.ExampleService/HealthCheck", runtime.WithHTTPPathPattern("/example/v1/health"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -210,7 +210,7 @@ func RegisterExampleServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/example.service.v1.ExampleService/Hello", runtime.WithHTTPPathPattern("/v1/hello"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/services.example.v1.ExampleService/Hello", runtime.WithHTTPPathPattern("/example/v1/hello"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -230,9 +230,9 @@ func RegisterExampleServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_ExampleService_HealthCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "health"}, ""))
+	pattern_ExampleService_HealthCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"example", "v1", "health"}, ""))
 
-	pattern_ExampleService_Hello_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "hello"}, ""))
+	pattern_ExampleService_Hello_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"example", "v1", "hello"}, ""))
 )
 
 var (
