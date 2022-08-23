@@ -6,18 +6,18 @@ import "google/api/annotations.proto";
 
 option go_package = "github.com/junglekimio/idl/gen/go/services/example/v1;examplev1";
 option java_multiple_files = true;
-option java_outer_classname = "ExampleProto";
+option java_outer_classname = "ExampleServiceProto";
 option java_package = "com.github.junglekimio.idl.services.example.v1";
 
 service ExampleService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
     option (google.api.http) = {
-      get: "/v1/health"
+      get: "/example/v1/health"
     };
   }
   rpc Hello(HelloRequest) returns (HelloResponse) {
     option (google.api.http) = {
-      get: "/v1/hello"
+      get: "/example/v1/hello"
     };
   }
 }

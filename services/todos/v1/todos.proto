@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package todos.service.v1;
+
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/junglekimio/idl/gen/go/services/todos/v1;todosv1";
+option java_multiple_files = true;
+option java_outer_classname = "TodosServiceProto";
+option java_package = "com.github.junglekimio.idl.services.todos.v1";
+
+service TodosService {
+  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
+    option (google.api.http) = {
+      get: "/todos/v1/health"
+    };
+  }
+
+  rpc GetServerTime(GetServerTimeRequest) returns (GetServerTimeResponse) {
+    option (google.api.http) = {
+        get: "/todos/v1/server-time"
+    };
+  }
+}
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {}
+
+message GetServerTimeRequest {
+  google.protobuf.Timestamp requested_at = 1;
+}
+
+message GetServerTimeResponse {
+  google.protobuf.Timestamp server_time = 1;
+}
