@@ -8,22 +8,22 @@
 ## Command
 
 ### Regenerate
-```sh
+```bash
 $ make clean
 $ make generate
 ```
 
 ### Lint
-```sh
+```bash
 $ make lint
 ```
 
 ### Format
-```sh
+```bash
 $ make format
 ```
 
 ### Manual
-```sh
+```bash
 $ make help
 ```
