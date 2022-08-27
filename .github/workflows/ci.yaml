@@ -17,6 +17,8 @@ jobs:
         run: make lint
   diff:
     name: Diff
+    needs:
+      - lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
