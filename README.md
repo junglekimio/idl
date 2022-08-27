@@ -4,6 +4,7 @@
 ## Prerequisites
 - [Go](https://go.dev/doc/install) 
 - [buf](https://docs.buf.build/installation)
+- (Optional)[ts-proto](https://github.com/stephenh/ts-proto)
 
 ## Command
 
