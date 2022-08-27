@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             (unknown)
-// source: services/example/v1/example.proto
+// source: example/v1/example.proto
 
 package examplev1
 
@@ -36,7 +36,7 @@ func NewExampleServiceClient(cc grpc.ClientConnInterface) ExampleServiceClient {
 
 func (c *exampleServiceClient) HealthCheck(ctx context.Context, in *HealthCheckRequest, opts ...grpc.CallOption) (*HealthCheckResponse, error) {
 	out := new(HealthCheckResponse)
-	err := c.cc.Invoke(ctx, "/services.example.v1.ExampleService/HealthCheck", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/example.v1.ExampleService/HealthCheck", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -45,7 +45,7 @@ func (c *exampleServiceClient) HealthCheck(ctx context.Context, in *HealthCheckR
 
 func (c *exampleServiceClient) Hello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloResponse, error) {
 	out := new(HelloResponse)
-	err := c.cc.Invoke(ctx, "/services.example.v1.ExampleService/Hello", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/example.v1.ExampleService/Hello", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -92,7 +92,7 @@ func _ExampleService_HealthCheck_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/services.example.v1.ExampleService/HealthCheck",
+		FullMethod: "/example.v1.ExampleService/HealthCheck",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ExampleServiceServer).HealthCheck(ctx, req.(*HealthCheckRequest))
@@ -110,7 +110,7 @@ func _ExampleService_Hello_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/services.example.v1.ExampleService/Hello",
+		FullMethod: "/example.v1.ExampleService/Hello",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ExampleServiceServer).Hello(ctx, req.(*HelloRequest))
@@ -122,7 +122,7 @@ func _ExampleService_Hello_Handler(srv interface{}, ctx context.Context, dec fun
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ExampleService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "services.example.v1.ExampleService",
+	ServiceName: "example.v1.ExampleService",
 	HandlerType: (*ExampleServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -135,5 +135,5 @@ var ExampleService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "services/example/v1/example.proto",
+	Metadata: "example/v1/example.proto",
 }

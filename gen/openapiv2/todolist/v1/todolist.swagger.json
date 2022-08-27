@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "services/todos/v1/todos.proto",
+    "title": "todolist/v1/todolist.proto",
     "version": "version not set"
   },
   "tags": [
