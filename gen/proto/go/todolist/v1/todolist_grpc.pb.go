@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             (unknown)
-// source: services/todos/v1/todos.proto
+// source: todolist/v1/todolist.proto
 
 package todolistv1
 
@@ -41,7 +41,7 @@ func NewTodoListServiceClient(cc grpc.ClientConnInterface) TodoListServiceClient
 
 func (c *todoListServiceClient) HealthCheck(ctx context.Context, in *HealthCheckRequest, opts ...grpc.CallOption) (*HealthCheckResponse, error) {
 	out := new(HealthCheckResponse)
-	err := c.cc.Invoke(ctx, "/services.todolist.v1.TodoListService/HealthCheck", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/todolist.v1.TodoListService/HealthCheck", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -50,7 +50,7 @@ func (c *todoListServiceClient) HealthCheck(ctx context.Context, in *HealthCheck
 
 func (c *todoListServiceClient) GetServerTime(ctx context.Context, in *GetServerTimeRequest, opts ...grpc.CallOption) (*GetServerTimeResponse, error) {
 	out := new(GetServerTimeResponse)
-	err := c.cc.Invoke(ctx, "/services.todolist.v1.TodoListService/GetServerTime", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/todolist.v1.TodoListService/GetServerTime", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -59,7 +59,7 @@ func (c *todoListServiceClient) GetServerTime(ctx context.Context, in *GetServer
 
 func (c *todoListServiceClient) CreateTodo(ctx context.Context, in *CreateTodoRequest, opts ...grpc.CallOption) (*CreateTodoResponse, error) {
 	out := new(CreateTodoResponse)
-	err := c.cc.Invoke(ctx, "/services.todolist.v1.TodoListService/CreateTodo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/todolist.v1.TodoListService/CreateTodo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -68,7 +68,7 @@ func (c *todoListServiceClient) CreateTodo(ctx context.Context, in *CreateTodoRe
 
 func (c *todoListServiceClient) ListTodos(ctx context.Context, in *ListTodosRequest, opts ...grpc.CallOption) (*ListTodosResponse, error) {
 	out := new(ListTodosResponse)
-	err := c.cc.Invoke(ctx, "/services.todolist.v1.TodoListService/ListTodos", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/todolist.v1.TodoListService/ListTodos", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,7 +77,7 @@ func (c *todoListServiceClient) ListTodos(ctx context.Context, in *ListTodosRequ
 
 func (c *todoListServiceClient) UpdateTodoStatus(ctx context.Context, in *UpdateTodoStatusRequest, opts ...grpc.CallOption) (*UpdateTodoStatusResponse, error) {
 	out := new(UpdateTodoStatusResponse)
-	err := c.cc.Invoke(ctx, "/services.todolist.v1.TodoListService/UpdateTodoStatus", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/todolist.v1.TodoListService/UpdateTodoStatus", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -86,7 +86,7 @@ func (c *todoListServiceClient) UpdateTodoStatus(ctx context.Context, in *Update
 
 func (c *todoListServiceClient) DeleteCompletedTodos(ctx context.Context, in *DeleteCompletedTodosRequest, opts ...grpc.CallOption) (*DeleteCompletedTodosResponse, error) {
 	out := new(DeleteCompletedTodosResponse)
-	err := c.cc.Invoke(ctx, "/services.todolist.v1.TodoListService/DeleteCompletedTodos", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/todolist.v1.TodoListService/DeleteCompletedTodos", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -95,7 +95,7 @@ func (c *todoListServiceClient) DeleteCompletedTodos(ctx context.Context, in *De
 
 func (c *todoListServiceClient) DeleteTodo(ctx context.Context, in *DeleteTodoRequest, opts ...grpc.CallOption) (*DeleteTodoResponse, error) {
 	out := new(DeleteTodoResponse)
-	err := c.cc.Invoke(ctx, "/services.todolist.v1.TodoListService/DeleteTodo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/todolist.v1.TodoListService/DeleteTodo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -162,7 +162,7 @@ func _TodoListService_HealthCheck_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/services.todolist.v1.TodoListService/HealthCheck",
+		FullMethod: "/todolist.v1.TodoListService/HealthCheck",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TodoListServiceServer).HealthCheck(ctx, req.(*HealthCheckRequest))
@@ -180,7 +180,7 @@ func _TodoListService_GetServerTime_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/services.todolist.v1.TodoListService/GetServerTime",
+		FullMethod: "/todolist.v1.TodoListService/GetServerTime",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TodoListServiceServer).GetServerTime(ctx, req.(*GetServerTimeRequest))
@@ -198,7 +198,7 @@ func _TodoListService_CreateTodo_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/services.todolist.v1.TodoListService/CreateTodo",
+		FullMethod: "/todolist.v1.TodoListService/CreateTodo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TodoListServiceServer).CreateTodo(ctx, req.(*CreateTodoRequest))
@@ -216,7 +216,7 @@ func _TodoListService_ListTodos_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/services.todolist.v1.TodoListService/ListTodos",
+		FullMethod: "/todolist.v1.TodoListService/ListTodos",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TodoListServiceServer).ListTodos(ctx, req.(*ListTodosRequest))
@@ -234,7 +234,7 @@ func _TodoListService_UpdateTodoStatus_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/services.todolist.v1.TodoListService/UpdateTodoStatus",
+		FullMethod: "/todolist.v1.TodoListService/UpdateTodoStatus",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TodoListServiceServer).UpdateTodoStatus(ctx, req.(*UpdateTodoStatusRequest))
@@ -252,7 +252,7 @@ func _TodoListService_DeleteCompletedTodos_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/services.todolist.v1.TodoListService/DeleteCompletedTodos",
+		FullMethod: "/todolist.v1.TodoListService/DeleteCompletedTodos",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TodoListServiceServer).DeleteCompletedTodos(ctx, req.(*DeleteCompletedTodosRequest))
@@ -270,7 +270,7 @@ func _TodoListService_DeleteTodo_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/services.todolist.v1.TodoListService/DeleteTodo",
+		FullMethod: "/todolist.v1.TodoListService/DeleteTodo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TodoListServiceServer).DeleteTodo(ctx, req.(*DeleteTodoRequest))
@@ -282,7 +282,7 @@ func _TodoListService_DeleteTodo_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var TodoListService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "services.todolist.v1.TodoListService",
+	ServiceName: "todolist.v1.TodoListService",
 	HandlerType: (*TodoListServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -315,5 +315,5 @@ var TodoListService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "services/todos/v1/todos.proto",
+	Metadata: "todolist/v1/todolist.proto",
 }
