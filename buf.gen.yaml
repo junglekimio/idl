@@ -20,7 +20,7 @@ plugins:
     opt:
       - esModuleInterop=true
       - env=browser
-      - onlyTypes=true
       - useJsonWireFormat=true
+      - onlyTypes=true
       - forceLong=string
-      - outputServices=false
+      - outputServices=none
