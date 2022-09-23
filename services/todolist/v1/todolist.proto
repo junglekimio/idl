@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package todolist.v1;
+package junglekimio.idl.services.todolist.v1;
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/junglekimio/idl/gen/go/todolist/v1;todolistv1";
+option go_package = "github.com/junglekimio/idl/gen/go/junglekimio/idl/services/todolist/v1;todolistv1";
 option java_multiple_files = true;
 option java_outer_classname = "TodoListServiceProto";
-option java_package = "com.github.junglekimio.idl.todolist.v1";
+option java_package = "com.github.junglekimio.idl.services.todolist.v1";
 
 service TodoListService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
