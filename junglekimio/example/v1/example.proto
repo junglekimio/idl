@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package junglekimio.example.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "github.com/junglekimio/idl/gen/go/junglekimio/example/v1;examplev1";
+option java_multiple_files = true;
+option java_outer_classname = "ExampleServiceProto";
+option java_package = "com.github.junglekimio.example.v1";
+
+service ExampleService {
+  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
+    option (google.api.http) = {
+      get: "/example/v1/health"
+    };
+  }
+  rpc Hello(HelloRequest) returns (HelloResponse) {
+    option (google.api.http) = {
+      get: "/example/v1/hello"
+    };
+  }
+}
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string name = 1;
+}
