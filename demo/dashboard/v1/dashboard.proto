@@ -1,25 +1,25 @@
 syntax = "proto3";
 
-package demo.apps.v1;
+package demo.dashboard.v1;
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/junglekimio/idl/gen/go/demo/apps/v1;appsv1";
+option go_package = "github.com/junglekimio/idl/gen/go/demo/dashboard/v1;dashboardv1";
 option java_multiple_files = true;
-option java_outer_classname = "AppServiceProto";
-option java_package = "com.github.junglekimio.demo.apps.v1";
+option java_outer_classname = "DashboardServiceProto";
+option java_package = "com.github.demo.dashboard.v1";
 
-service AppsService {
+service DashboardService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
     option (google.api.http) = {
-      get: "/apps/v1/health"
+      get: "/dashboard/v1/health"
     };
   }
 
   rpc GetServerTime(GetServerTimeRequest) returns (GetServerTimeResponse) {
     option (google.api.http) = {
-      get: "/apps/v1/server-time"
+      get: "/dashboard/v1/server-time"
     };
   }
 }

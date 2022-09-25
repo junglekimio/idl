@@ -8,7 +8,7 @@ import "google/protobuf/timestamp.proto";
 option go_package = "github.com/junglekimio/idl/gen/go/demo/todolist/v1;todolistv1";
 option java_multiple_files = true;
 option java_outer_classname = "TodoListServiceProto";
-option java_package = "com.github.junglekimio.demo.todolist.v1";
+option java_package = "com.github.demo.todolist.v1";
 
 service TodoListService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {

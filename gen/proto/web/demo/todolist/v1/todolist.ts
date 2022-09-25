@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-export const protobufPackage = "junglekimio.todolist.v1";
+export const protobufPackage = "demo.todolist.v1";
 
 export enum TodoStatus {
   TODO_STATUS_UNSPECIFIED = "TODO_STATUS_UNSPECIFIED",

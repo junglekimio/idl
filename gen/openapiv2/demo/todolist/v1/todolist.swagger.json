@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "junglekimio/todolist/v1/todolist.proto",
+    "title": "demo/todolist/v1/todolist.proto",
     "version": "version not set"
   },
   "tags": [
