@@ -8,10 +8,14 @@
 
 ## Command
 
+### generate
+```bash
+$ make generate
+```
+
 ### Regenerate
 ```bash
-$ make clean
-$ make generate
+$ make regenerate
 ```
 
 ### Lint
