@@ -26,6 +26,10 @@ format: install-tools
 generate: install-tools
 	buf generate
 
+.PHONY: regenerate
+## regenerate: regenerate proto related files
+regenerate: clean generate 
+
 .PHONY: clean
 ## clean: remove generated proto files
 clean:
