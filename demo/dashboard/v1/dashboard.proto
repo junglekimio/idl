@@ -12,15 +12,11 @@ option java_package = "com.github.demo.dashboard.v1";
 
 service DashboardService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
-    option (google.api.http) = {
-      get: "/dashboard/v1/health"
-    };
+    option (google.api.http) = {get: "/dashboard/v1/health"};
   }
 
   rpc GetServerTime(GetServerTimeRequest) returns (GetServerTimeResponse) {
-    option (google.api.http) = {
-      get: "/dashboard/v1/server-time"
-    };
+    option (google.api.http) = {get: "/dashboard/v1/server-time"};
   }
 }
 
