@@ -1,21 +1,21 @@
 version: v1
 plugins:
-  - name: go
+  - plugin: go
     out: gen/proto/go
     opt: paths=source_relative
-  - name: go-grpc
+  - plugin: go-grpc
     out: gen/proto/go
     opt:
       - paths=source_relative
       - require_unimplemented_servers=false
-  - name: grpc-gateway
+  - plugin: grpc-gateway
     out: gen/proto/go
     opt:
       - paths=source_relative
       - generate_unbound_methods=true
-  - name: openapiv2
+  - plugin: openapiv2
     out: gen/openapiv2
-  - remote: buf.build/stephenh/plugins/ts-proto
+  - plugin: buf.build/community/stephenh-ts-proto
     out: gen/proto/web
     opt:
       - esModuleInterop=true

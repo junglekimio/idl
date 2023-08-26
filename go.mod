@@ -1,6 +1,6 @@
 module github.com/junglekimio/idl
 
-go 1.19
+go 1.21
 
 require (
 	github.com/bufbuild/buf v1.7.0

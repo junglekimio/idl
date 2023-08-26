@@ -12,15 +12,11 @@ option java_package = "com.github.demo.todolist.v1";
 
 service TodoListService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
-    option (google.api.http) = {
-      get: "/todolist/v1/health"
-    };
+    option (google.api.http) = {get: "/todolist/v1/health"};
   }
 
   rpc GetServerTime(GetServerTimeRequest) returns (GetServerTimeResponse) {
-    option (google.api.http) = {
-      get: "/todolist/v1/server-time"
-    };
+    option (google.api.http) = {get: "/todolist/v1/server-time"};
   }
 
   rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse) {
@@ -31,9 +27,7 @@ service TodoListService {
   }
 
   rpc ListTodos(ListTodosRequest) returns (ListTodosResponse) {
-    option (google.api.http) = {
-      get: "/todolist/v1/todos"
-    };
+    option (google.api.http) = {get: "/todolist/v1/todos"};
   }
 
   rpc UpdateTodoStatus(UpdateTodoStatusRequest) returns (UpdateTodoStatusResponse) {
@@ -48,15 +42,11 @@ service TodoListService {
   }
 
   rpc DeleteCompletedTodos(DeleteCompletedTodosRequest) returns (DeleteCompletedTodosResponse) {
-    option (google.api.http) = {
-      delete: "/todolist/v1/todos/completed"
-    };
+    option (google.api.http) = {delete: "/todolist/v1/todos/completed"};
   }
 
   rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse) {
-    option (google.api.http) = {
-      delete: "/todolist/v1/todos/{todo_id}"
-    };
+    option (google.api.http) = {delete: "/todolist/v1/todos/{todo_id}"};
   }
 }
 

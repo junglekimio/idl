@@ -12,7 +12,11 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
-          go-version: 1.19
+          go-version: 1.21
+      - name: Set up buf
+        uses: bufbuild/buf-setup-action@v1
+        with:
+          version: "1.26.1"
       - name: Lint
         run: make lint
   diff:
@@ -26,7 +30,11 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
-          go-version: 1.19
+          go-version: 1.21
+      - name: Set up buf
+        uses: bufbuild/buf-setup-action@v1
+        with:
+          version: "1.26.1"
       - name: Clean
         run: make clean
       - name: Generate
